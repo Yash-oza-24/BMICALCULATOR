@@ -9,7 +9,7 @@ import 'package:sociable/componants/drawer.dart';
 import 'package:sociable/componants/sociable_post.dart';
 import 'package:sociable/componants/text_field.dart';
 import 'package:sociable/helper/helper_methods.dart';
-import 'package:sociable/pages/chat_screen.dart';
+
 
 import 'package:sociable/pages/profilepage.dart';
 

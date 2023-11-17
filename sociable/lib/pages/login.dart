@@ -31,9 +31,8 @@ class _LoginscreenState extends State<Loginscreen> {
       if (context.mounted) Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
-      
-      displaymessage(e.code);
 
+      displaymessage(e.code);
     }
   }
 
@@ -60,8 +59,12 @@ class _LoginscreenState extends State<Loginscreen> {
                   Icons.face,
                   size: 100,
                 ),
+                Text(
+                  "Sociable",
+                  style: TextStyle(color: Colors.grey[700], fontSize: 30),
+                ),
                 SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 Text("Welcome back", style: TextStyle(color: Colors.grey[700])),
                 SizedBox(

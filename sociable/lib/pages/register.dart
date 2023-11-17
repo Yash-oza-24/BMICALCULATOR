@@ -43,9 +43,9 @@ class _registrationState extends State<registration> {
           .collection("Users")
           .doc(usercredential.user!.email!)
           .set({
-            'Username':emailController.text.split('@')[0],
-            "Bio":"Empty Bio.."
-          });
+        'Username': emailController.text.split('@')[0],
+        "Bio": "Empty Bio.."
+      });
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
 
@@ -77,8 +77,12 @@ class _registrationState extends State<registration> {
                     Icons.face,
                     size: 100,
                   ),
+                  Text(
+                    "Sociable",
+                    style: TextStyle(color: Colors.grey[700], fontSize: 30),
+                  ),
                   SizedBox(
-                    height: 50,
+                    height: 30,
                   ),
                   Text(" Create an account for you",
                       style: TextStyle(color: Colors.grey[700])),

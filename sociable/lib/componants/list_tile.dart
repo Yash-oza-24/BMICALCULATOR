@@ -13,7 +13,7 @@ class Mylisttile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 10.0),
-      child: ListTile(
+      child: ListTile( 
         leading: Icon(
           icon,
           color: Colors.white,

@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, unused_local_variable, duplicate_ignore
+// ignore_for_file: camel_case_types, prefer_const_constructors, unused_local_variable, duplicate_ignore, non_constant_identifier_names, avoid_print, use_build_context_synchronously
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -94,14 +94,20 @@ class _sociablepostState extends State<sociablepost> {
                       Navigator.pop(context);
                       _commentsTextController.clear();
                     },
-                    child: Text("Cancel")),
+                    child: Text(
+                      "Cancel",
+                      style: TextStyle(color: Colors.white),
+                    )),
                 TextButton(
                     onPressed: () {
                       addComment(_commentsTextController.text);
                       Navigator.pop(context);
                       _commentsTextController.clear();
                     },
-                    child: Text("Post")),
+                    child: Text(
+                      "Post",
+                      style: TextStyle(color: Colors.white),
+                    )),
               ],
             ));
   }
@@ -110,12 +116,18 @@ class _sociablepostState extends State<sociablepost> {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("Delete Post"),
+              title: Text(
+                "Delete Post",
+                style: TextStyle(color: Colors.white),
+              ),
               content: Text("Are you sure You Want to delete this Post?"),
               actions: [
                 TextButton(
                     onPressed: () => Navigator.pop(context),
-                    child: Text("Cancel")),
+                    child: Text(
+                      "Cancel",
+                      style: TextStyle(color: Colors.white),
+                    )),
                 TextButton(
                     onPressed: () async {
                       final CommentDocs = await FirebaseFirestore.instance
@@ -139,7 +151,10 @@ class _sociablepostState extends State<sociablepost> {
                               print("Failed to delete a post: $error"));
                       Navigator.pop(context);
                     },
-                    child: Text("Delete"))
+                    child: Text(
+                      "Delete",
+                      style: TextStyle(color: Colors.white),
+                    ))
               ],
             ));
   }
