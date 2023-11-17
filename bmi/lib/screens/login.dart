@@ -4,6 +4,7 @@ import 'package:bmi/screens/homescreen.dart';
 import 'package:bmi/screens/registration.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 // import 'package:mylogin3/views/auth/forgotpassword.dart';
 
@@ -129,9 +130,19 @@ class _LoginScreenState extends State<LoginScreen> {
                             } else {
                               print('Check Email & Password');
                             }
+
+                            Fluttertoast.showToast(
+                                msg: "Login Successfully",
+                                backgroundColor: Colors.white,
+                                textColor: Colors.black);
                           } on FirebaseAuthException catch (e) {
                             print("Error$e");
                           }
+
+                          Fluttertoast.showToast(
+                              msg: "Login Failed",
+                              backgroundColor: Colors.white,
+                              textColor: Colors.black);
                         }
                       },
                       child: Text(
@@ -152,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onTap: () {
                           Navigator.push(
                               context,
-                              MaterialPageRoute( 
+                              MaterialPageRoute(
                                   builder: (context) => SignupScreen()));
                         },
                         child: Text('Sign up'),

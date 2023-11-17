@@ -91,11 +91,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   "Your BMI is: ${bmicalculatedvalue.text}",
                   style: TextStyle(fontSize: 20, color: Colors.black87),
                 ),
+                SizedBox(),
+                Text(
+                  _getBMIStatus(
+                      double.tryParse(bmicalculatedvalue.text) ?? 0.0),
+                  style: TextStyle(fontSize: 20, color: Colors.grey),
+                ),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+}
+
+String _getBMIStatus(double bmiValue) {
+  if (bmiValue <= 18.5) {
+    return "Underweight";
+  } else if (bmiValue > 18.5 && bmiValue <= 24.9) {
+    return "Normal weight";
+  } else if (bmiValue >= 25 && bmiValue <= 29.9) {
+    return "Overweight";
+  } else {
+    return "Obesity";
   }
 }
